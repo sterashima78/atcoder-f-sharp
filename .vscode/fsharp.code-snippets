@@ -18,9 +18,20 @@
     ],
     "description": "Read Int Array from stdin"
   },
+  "Read Float Array": {
+    "prefix": "read float array",
+    "body": [
+      "let readFloatArray () = stdin.ReadLine().Split(\" \") |> Array.map float"
+    ],
+    "description": "Read Int Array from stdin"
+  },
   "Read Char Array": {
     "prefix": "read char",
     "body": ["let readCharArray () = stdin.ReadLine().ToCharArray()"],
     "description": "Read Int Array from stdin"
+  },
+  "Choice by boolean": {
+    "prefix": "choice by boolean",
+    "body": ["let choice ok ng bool = if bool then ok else ng"]
   }
 }
