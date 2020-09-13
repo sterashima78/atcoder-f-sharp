@@ -8,26 +8,26 @@
   // Example:
   "Read Int": {
     "prefix": "read int",
-    "body": ["let readInt () = stdin.ReadLine() |> int"],
+    "body": ["let readInt _ = stdin.ReadLine() |> int"],
     "description": "Read Int from stdin"
   },
   "Read Int Array": {
     "prefix": "read int array",
     "body": [
-      "let readIntArray () = stdin.ReadLine().Split(\" \") |> Array.map int"
+      "let readIntArray _ = stdin.ReadLine().Split(\" \") |> Array.map int"
     ],
     "description": "Read Int Array from stdin"
   },
   "Read Float Array": {
     "prefix": "read float array",
     "body": [
-      "let readFloatArray () = stdin.ReadLine().Split(\" \") |> Array.map float"
+      "let readFloatArray _ = stdin.ReadLine().Split(\" \") |> Array.map float"
     ],
     "description": "Read Int Array from stdin"
   },
   "Read Char Array": {
     "prefix": "read char",
-    "body": ["let readCharArray () = stdin.ReadLine().ToCharArray()"],
+    "body": ["let readCharArray _ = stdin.ReadLine().ToCharArray()"],
     "description": "Read Int Array from stdin"
   },
   "Choice by boolean": {
