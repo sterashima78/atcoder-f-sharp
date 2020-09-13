@@ -33,5 +33,25 @@
   "Choice by boolean": {
     "prefix": "choice by boolean",
     "body": ["let choice ok ng bool = if bool then ok else ng"]
+  },
+  "Mod pown": {
+    "prefix": "mod pown",
+    "body": [
+      "let modPown m x y =",
+      "    seq { 1 .. y }",
+      "    |> Seq.fold (fun a _ -> a * x % m) 1L"
+    ]
+  },
+  "Mod add": {
+    "prefix": "mod add",
+    "body": ["let modadd m x y = (x + y) % m"]
+  },
+  "Mod sub": {
+    "prefix": "mod sub",
+    "body": ["let modsub m x y = (x + m - y) % m"]
+  },
+  "Mod mul": {
+    "prefix": "mod mul",
+    "body": ["let modmul m x y = ((x % m) * (y % m)) % m"]
   }
 }
