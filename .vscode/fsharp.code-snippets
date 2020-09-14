@@ -53,5 +53,11 @@
   "Mod mul": {
     "prefix": "mod mul",
     "body": ["let modmul m x y = ((x % m) * (y % m)) % m"]
+  },
+  "IsSquare": {
+    "prefix": "is square",
+    "body": [
+      "let isSquare x = x |> float |> System.Math.Sqrt |> int |> pown <| 2 |> (=) x"
+    ]
   }
 }
