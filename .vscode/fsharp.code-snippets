@@ -59,5 +59,9 @@
     "body": [
       "let isSquare x = x |> float |> System.Math.Sqrt |> int |> pown <| 2 |> (=) x"
     ]
+  },
+  "Uniq Array": {
+    "prefix": "uniq array",
+    "body": ["let uniqArray x = x |> Array.groupBy id |> Array.map fst"]
   }
 }
