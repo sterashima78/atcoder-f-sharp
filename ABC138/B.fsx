@@ -1,9 +1,10 @@
-let readIntArray () =
-    stdin.ReadLine().Split(" ") |> Array.map int
+let readInt _ = stdin.ReadLine() |> int
 
-readIntArray ()
-|> fun [| x; y |] ->
-    [ (y - x + 1) .. (y + x - 1) ]
-    |> List.map string
-    |> String.concat " "
-    |> printfn "%s"
+let readFloatArray _ =
+    stdin.ReadLine().Split(" ") |> Array.map float
+
+stdin.ReadLine()
+|> readFloatArray
+|> Array.sumBy (fun x -> 1.0 / x)
+|> (/) 1.0
+|> printfn "%f"
