@@ -63,5 +63,9 @@
   "Uniq Array": {
     "prefix": "uniq array",
     "body": ["let uniqArray x = x |> Array.groupBy id |> Array.map fst"]
+  },
+  "Create Dictionary": {
+    "prefix": "create dict",
+    "body": ["let createDict _ = new System.Collections.Generic.Dictionary<>()"]
   }
 }
