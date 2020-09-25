@@ -67,5 +67,44 @@
   "Create Dictionary": {
     "prefix": "create dict",
     "body": ["let createDict _ = new System.Collections.Generic.Dictionary<>()"]
+  },
+  "isPrime": {
+    "prefix": "is prime",
+    "body": [
+      "let isPrime n =",
+      "  if n = 1L then",
+      "      true",
+      "  else",
+      "      seq { 2L .. n }",
+      "      |> Seq.filter (fun a -> a * a <= n)",
+      "      |> Seq.exists (fun x -> n % x = 0L)",
+      "      |> not"
+    ]
+  },
+  "toDivisors": {
+    "prefix": "to divisors",
+    "body": [
+      "let toDivisors n =",
+      "    seq { 2 .. n }",
+      "    |> Seq.filter (fun a -> a * a <= n)",
+      "    |> Seq.collect (fun x ->",
+      "        if n % x = 0 && x * x <> n then",
+      "            seq { x; (n/x) }",
+      "        elif n % x = 0 then",
+      "            seq { x }",
+      "        else",
+      "            Seq.empty)"
+    ]
+  },
+  "GCD": {
+    "prefix": "gcd",
+    "body": ["let rec gcd a b = if b = 0L then a else gcd b (a % b)"]
+  },
+  "LCM": {
+    "prefix": "lcm",
+    "body": [
+      "let rec gcd a b = if b = 0L then a else gcd b (a % b)",
+      "let lcm a b = a |> (/) <| gcd a b |> (*) b"
+    ]
   }
 }
