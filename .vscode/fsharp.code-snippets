@@ -8,7 +8,9 @@
   // Example:
   "Read Int": {
     "prefix": "read int",
-    "body": ["let readInt _ = stdin.ReadLine() |> int"],
+    "body": [
+      "let readInt _ = stdin.ReadLine() |> int"
+    ],
     "description": "Read Int from stdin"
   },
   "Read Int Array": {
@@ -27,12 +29,16 @@
   },
   "Read Char Array": {
     "prefix": "read char",
-    "body": ["let readCharArray _ = stdin.ReadLine().ToCharArray()"],
+    "body": [
+      "let readCharArray _ = stdin.ReadLine().ToCharArray()"
+    ],
     "description": "Read Int Array from stdin"
   },
   "Choice by boolean": {
     "prefix": "choice by boolean",
-    "body": ["let choice ok ng bool = if bool then ok else ng"]
+    "body": [
+      "let choice ok ng bool = if bool then ok else ng"
+    ]
   },
   "Mod pown": {
     "prefix": "mod pown",
@@ -44,15 +50,21 @@
   },
   "Mod add": {
     "prefix": "mod add",
-    "body": ["let modadd m x y = (x + y) % m"]
+    "body": [
+      "let modadd m x y = (x + y) % m"
+    ]
   },
   "Mod sub": {
     "prefix": "mod sub",
-    "body": ["let modsub m x y = (x + m - y) % m"]
+    "body": [
+      "let modsub m x y = (x + m - y) % m"
+    ]
   },
   "Mod mul": {
     "prefix": "mod mul",
-    "body": ["let modmul m x y = ((x % m) * (y % m)) % m"]
+    "body": [
+      "let modmul m x y = ((x % m) * (y % m)) % m"
+    ]
   },
   "IsSquare": {
     "prefix": "is square",
@@ -62,11 +74,15 @@
   },
   "Uniq Array": {
     "prefix": "uniq array",
-    "body": ["let uniqArray x = x |> Array.groupBy id |> Array.map fst"]
+    "body": [
+      "let uniqArray x = x |> Array.groupBy id |> Array.map fst"
+    ]
   },
   "Create Dictionary": {
     "prefix": "create dict",
-    "body": ["let createDict _ = new System.Collections.Generic.Dictionary<>()"]
+    "body": [
+      "let createDict _ = new System.Collections.Generic.Dictionary<>()"
+    ]
   },
   "isPrime": {
     "prefix": "is prime",
@@ -98,13 +114,31 @@
   },
   "GCD": {
     "prefix": "gcd",
-    "body": ["let rec gcd a b = if b = 0L then a else gcd b (a % b)"]
+    "body": [
+      "let rec gcd a b = if b = 0L then a else gcd b (a % b)"
+    ]
   },
   "LCM": {
     "prefix": "lcm",
     "body": [
       "let rec gcd a b = if b = 0L then a else gcd b (a % b)",
       "let lcm a b = a |> (/) <| gcd a b |> (*) b"
+    ]
+  },
+  "Permutation": {
+    "prefix": "permutaion",
+    "body": [
+      "let toPermutation (list: 'a list): 'a list list =",
+      "  let difference xs ys =",
+      "      let ys = Set.ofList ys",
+      "      xs |> List.filter (ys.Contains >> not)",
+      "",
+      "  let rec permutation (rest: 'a list) (current: 'a list) (answers: 'a list list) =",
+      "      match rest with",
+      "      | [] -> current :: answers",
+      "      | rest -> List.foldBack (fun x state -> permutation (difference rest [ x ]) (x :: current) state) rest answers",
+      "",
+      "  permutation list [] []"
     ]
   }
 }
