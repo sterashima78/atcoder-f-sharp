@@ -129,5 +129,17 @@
       "",
       "  permutation list [] []"
     ]
+  },
+  "Create Bit Seq": {
+    "prefix": "create bit seq",
+    "body": [
+      "let createBitSeq n = { 1 .. pown 2 n - 1 } |> Seq.map (fun x -> System.Convert.ToString(x, 2))"
+    ]
+  },
+  "Select By Bit": {
+    "prefix": "select by bit",
+    "body": [
+      "let selectByBit (arr: 'a []) (str: string) = str.ToCharArray() |> Array.rev |> Array.mapi (fun index v -> if v = '1' then Some(arr.[index]) else None) |> Array.choose id"
+    ]
   }
 }
