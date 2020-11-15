@@ -93,7 +93,7 @@
     "body": [
       "let toDivisors n =",
       "    seq { 2 .. n }",
-      "    |> Seq.filter (fun a -> a * a <= n)",
+      "    |> Seq.takeWhile (fun a -> a * a <= n)",
       "    |> Seq.collect (fun x ->",
       "        if n % x = 0 && x * x <> n then",
       "            seq { x; (n/x) }",
